@@ -12,7 +12,7 @@ public class Main {
 			Archivo fmPersonas = new Archivo("Personas.txt");
 			// Punto B
 			// Leo el archivo de personas y guardo las lineas del archivo en la variable lineasArchivo
-			ArrayList<String> lineasArchivo = fmPersonas.leer_lineas();
+			ArrayList<String> lineasArchivo = fmPersonas.leerLineas();
 			// Declaracion del treeset de personas para tener un listado ordernado y sin duplicados
 			TreeSet<Persona> personasTS = new TreeSet<Persona>();
 			for (String linea : lineasArchivo)
@@ -37,13 +37,18 @@ public class Main {
 					System.out.println(ex.getMessage());
 				}
 			}
+			//Punto C
 			// Listado del TreeSet de Personas
-			System.out.println("personasTS");
+			System.out.println("Armado y grabado del archivo Resultado.txt");
+			
+			// Preparo el texto a grabar
+			String stringAgrabar = "";
 			for (Persona p : personasTS)
-			{
-				System.out.println(p.toString());
-			}
-			System.out.println(personasTS.size());
+				stringAgrabar += p.getNombre() + "-" + p.getApellido() + "-" + p.getDni() + System.lineSeparator();
+			
+			// Grabo el texto armado en el archivo Resultado.txt
+			Archivo fmPersonasNuevo = new Archivo("Resultado.txt");
+			fmPersonasNuevo.escribirLineas(stringAgrabar);
 		}
 		catch(Exception ex)
 		{
