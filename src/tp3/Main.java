@@ -11,15 +11,15 @@ public class Main {
 		{
 			Archivo fmPersonas = new Archivo("Personas.txt");
 			// Punto B
-			// Leo el archivo de personas y guardo las lineas del archivo en la variable lineasArchivo
+			// Leo el archivo de personas y guardo las lineas del archivo en la variable lineasArchivo.
 			ArrayList<String> lineasArchivo = fmPersonas.leerLineas();
-			// Declaracion del treeset de personas para tener un listado ordernado y sin duplicados
+			// Declaracion del treeset de personas para tener una lista ordernado y sin duplicados.
 			TreeSet<Persona> personasTS = new TreeSet<Persona>();
 			for (String linea : lineasArchivo)
 			{
 				try
 				{
-					// Spliteo cada linea del archivo. Segun la especificacion cada campo esta separado por "-"  
+					// Spliteo cada linea del archivo. Segun la especificacion cada campo esta separado por "-".  
 					String[] lineaSpliteada = linea.split("-");
 					
 					// Valido que el "dni"se valido.
@@ -38,7 +38,6 @@ public class Main {
 				}
 			}
 			//Punto C
-			// Listado del TreeSet de Personas
 			System.out.println("Armado y grabado del archivo Resultado.txt");
 			
 			// Preparo el texto a grabar
