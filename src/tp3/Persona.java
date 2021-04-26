@@ -93,8 +93,6 @@ public class Persona implements Comparable<Persona> {
 
 	@Override
 	public int compareTo(Persona o) {
-		if(this.apellido.equals(o.apellido))
-			return 0;
 		
 		return this.apellido.compareTo(o.apellido);
 	}
